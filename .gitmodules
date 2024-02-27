@@ -1,3 +1,6 @@
 [submodule "app/api"]
 	path = app/api
 	url = https://github.com/topongo/bruss_api
+[submodule "app/db"]
+	path = app/db
+	url = https://github.com/topongo/bruss_db
