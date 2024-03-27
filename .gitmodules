@@ -5,5 +5,14 @@
 	path = app/db
 	url = https://github.com/topongo/bruss_db
 [submodule "app/tt"]
-	path = app/tt
+	path = tt
 	url = https://github.com/topongo/bruss_tt
+[submodule "data"]
+	path = data
+	url = https://github.com/topongo/bruss_data
+[submodule "config"]
+	path = config
+	url = https://github.com/topongo/bruss_config
+[submodule "router"]
+	path = router
+	url = https://github.com/topongo/bruss_router
