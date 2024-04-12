@@ -16,3 +16,6 @@
 [submodule "router"]
 	path = router
 	url = https://github.com/topongo/bruss_router
+[submodule "demo"]
+	path = demo
+	url = https://github.com/topongo/bruss_demo
