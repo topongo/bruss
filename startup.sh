@@ -2,7 +2,10 @@
 
 set -e
 
-sudo systemctl start docker
+
+if ! systemctl is-active docker; then
+  sudo systemctl start docker
+fi
 docker compose -f app/db/docker-compose.yml up -d
 cargo run -p bruss_api
 
