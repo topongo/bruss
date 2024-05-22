@@ -10,10 +10,10 @@ schedules and organizes the map data.
 An application is provided for consulting the actual location and delay of each bus, the application components
 are:
 - **[bruss_api](https://github.com/topongo/bruss_api)**: An API backend written using [rocket](https://rocket.rs/);
-- **??**: A frontend written in ??;
+- **[bruss_app](https://github.com/topongo/bruss_app)**: A frontend written in [flutter](https://flutter.dev);
 - **[bruss_db](https://github.com/topongo/bruss_db)**: [MongoDB](https://mongodb.com) in a docker container;
 
-After some data gathering, an analysis on the gathered data will be done, it will involve the average delay
+After some data gathering, an analysis on the will be done, it will involve the average delay
 for every line of busses, based on their location, on the hour of day and the day of the week. This will
 maybe help understanding how the delay is generated and how the city traffic affect the public transportation
 service.
@@ -30,12 +30,19 @@ Project by Lorenzo Bodini, for bachelor degree internship.
 - [x] Choose programming components
 
 ## Components
-- [ ] TT Fetcher: [bruss_tt](https://github.com/topongo/bruss_tt) (rust)
-- [ ] Grind: [bruss_grind](/topongo/bruss_grind) (rust)
+- [x] TT: [bruss_tt](https://github.com/topongo/bruss_tt) (rust)
+HTTP client tailored to work with TT APIs, including serialization of the incoming data and a better representation of it.
+- [x] Router: [bruss_router](/topongo/bruss_grind) (rust)
+Data processor, it uses TT for getting static (like `Area`s and `Stop`s) and dynamic (like `Trip`s) from the official
+servers, it then proceeds to process the data, mainly calculating the segments that connect the right stops using a custom
+instance of [OSRM](https://project-osrm.org/) (Open Source Routing Machine).
+- [x] OSRM: [bruss_osrm](https://github.com/topongo/bruss_osrm)
+Docker files and scripts to run a custom instance of OSRM, configured to be able to calculate bus and train paths, that do not
+necessarily follow standard traffic rules.
 - [ ] App
-	- [ ] Frontend: *TBD* 
-	- [ ] Backend: [bruss_api](https://github.com/topongo/bruss_api) (rust / rocket)
-	- [ ] Database: [bruss_db](https://github.com/topongo/bruss_db) (mongodb)
+	- [ ] Frontend: [bruss_app](https://github.com/topongo/bruss_app) (flutter) 
+	- [x] Backend: [bruss_api](https://github.com/topongo/bruss_api) (rust / rocket)
+	- [x] Database: [bruss_db](https://github.com/topongo/bruss_db) (mongodb)
 - [ ] Data Analyzer
 	- [ ] Analyzer: *TBD* (rust)
 	- [ ] Visualizer: *TBD* (rust / egui?)
