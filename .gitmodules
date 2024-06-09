@@ -19,3 +19,6 @@
 [submodule "demo"]
 	path = demo
 	url = https://github.com/topongo/bruss_demo
+[submodule "app/client"]
+	path = app/client
+	url = https://github.com/topongo/bruss_app
