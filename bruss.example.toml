@@ -1,0 +1,18 @@
+[db]
+host = "localhost"
+user = "bruss"
+password = "hackme"
+db = "bruss"
+
+[tt]
+base_url = "https://app-tpl.tndigit.it/gtlservice/"
+secret = ""
+
+[routing]
+host = "localhost"
+port = 5000 
+url_bus = "/bus/"
+url_rail = "/rail/"
+get_trips = true
+skip_routing_types = []
+
