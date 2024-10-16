@@ -7,3 +7,16 @@ members = [
   "data",
   "app/api",
 ]
+
+[workspace.dependencies]
+serde = "^1.0"
+
+[profile.docker]
+inherits = "release"
+opt-level = 3
+strip = "debuginfo"
+debug-assertions = false
+overflow-checks = false
+panic = "abort"
+lto = true
+

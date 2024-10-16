@@ -1,0 +1,30 @@
+services:
+  db:
+    image: mongo
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: bruss
+      MONGO_INITDB_ROOT_PASSWORD: ${BRUSS_DB_PASSWORD}
+  api:
+    build:
+      context: .
+      dockerfile: ./app/api/Dockerfile
+    environment:
+      RUST_LOG: info
+    volumes:
+      - ./bruss.toml:/app/bruss.toml
+      - ./Rocket.toml:/app/Rocket.toml
+    ports:
+      - "80:8000"
+  router:
+    build:
+      context: .
+      dockerfile: ./router/Dockerfile
+    environment:
+      RUST_LOG: bruss_fetch=info,bruss_route=info
+    volumes:
+      - ./bruss.toml:/app/bruss.toml
+
+volumes:
+  mongodb_data:
