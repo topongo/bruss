@@ -1,3 +1,6 @@
+Rocket.toml
+.env
 bruss.toml
 Cargo.lock
 target
+.cargo
