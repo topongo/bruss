@@ -1,9 +1,13 @@
+**DEPRECATED BRANCH**
+This branch is part of an abandoned stage of development that aimed to deduce the schedule cadence without success.
+Please refer to the `master` branch.
+
 # Bruss
 Rust-based web app for visually tracking busses of the city of Trento.
 Interactive map for visual tracking of busses, with their trips, the current location and delay.
 
 The data is provided by Trentino Trasporti (TT) using the [bruss_tt](https://github.com/topongo/bruss_tt) crate, 
-fetches data from their APIs. The data is processed through the [bruss_grind](https://github.com/topongo/bruss_grind)
+fetches data from their APIs. The data is processed through the [bruss_router](https://github.com/topongo/bruss_router)
 tool that interpolates bus routes, provide
 schedules and organizes the map data. 
 
@@ -43,9 +47,9 @@ necessarily follow standard traffic rules.
 	- [ ] Frontend: [bruss_app](https://github.com/topongo/bruss_app) (flutter) 
 	- [x] Backend: [bruss_api](https://github.com/topongo/bruss_api) (rust / rocket)
 	- [x] Database: [bruss_db](https://github.com/topongo/bruss_db) (mongodb)
-- [ ] Data Analyzer
-	- [ ] Analyzer: *TBD* (rust)
-	- [ ] Visualizer: *TBD* (rust / egui?)
+~~- [ ] Data Analyzer~~
+    ~~- [ ] Analyzer: *TBD* (rust)~~
+	~~- [ ] Visualizer: *TBD* (rust / egui?)~~
 
 ## Docs
 - [ ] Write inline documentation for all components

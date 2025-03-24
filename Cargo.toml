@@ -5,13 +5,13 @@ members = [
   "tt",
   "config",
   "data",
-  "app/api",
+  "app/api", "test_mongodb",
 ]
 
 [workspace.dependencies]
 serde = "^1.0"
 mongodb = "2.8.2"
-
+bson = { version = "2.13.0", features = ["chrono-0_4"] }
 [profile.docker]
 inherits = "release"
 opt-level = 3
