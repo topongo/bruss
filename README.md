@@ -1,7 +1,3 @@
-**DEPRECATED BRANCH**
-This branch is part of an abandoned stage of development that aimed to deduce the schedule cadence without success.
-Please refer to the `master` branch.
-
 # Bruss
 Rust-based web app for visually tracking busses of the city of Trento.
 Interactive map for visual tracking of busses, with their trips, the current location and delay.

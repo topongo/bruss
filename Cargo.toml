@@ -5,7 +5,7 @@ members = [
   "tt",
   "config",
   "data",
-  "app/api", "test_mongodb",
+  "app/api",
 ]
 
 [workspace.dependencies]
