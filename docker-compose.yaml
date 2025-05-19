@@ -5,22 +5,26 @@ services:
       - mongodb_data:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: bruss
-      MONGO_INITDB_ROOT_PASSWORD: ${BRUSS_DB_PASSWORD}
+      MONGO_INITDB_ROOT_PASSWORD: ${BRUSS_DB_PASSWORD:?}
+
   api:
-    build:
-      context: .
-      dockerfile: ./app/api/Dockerfile
+    image: topongo/bruss
+    build: .
     environment:
       RUST_LOG: info
+      ROCKET_ADDRESS: 0.0.0.0
+      ROCKET_PORT: 8000
+      ROCKET_LOG_LEVEL: debug
+      ROCKET_DATABASES: "{bruss={url=\"mongodb://bruss:${BRUSS_DB_PASSWORD:?}@${BRUSS_DB_HOST:-db}\"}}"
     volumes:
       - ./bruss.toml:/app/bruss.toml
-      - ./Rocket.toml:/app/Rocket.toml
     ports:
       - "80:8000"
+    command: bruss_api
+
   router:
-    build:
-      context: .
-      dockerfile: ./router/Dockerfile
+    image: topongo/bruss
+    build: .
     environment:
       RUST_LOG: bruss_fetch=info,bruss_route=info
     volumes:
